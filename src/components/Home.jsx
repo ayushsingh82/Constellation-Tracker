@@ -34,7 +34,7 @@ const TypewriterEffectSmoothDemo = () => {
 
 function Home() {
     return (
-        <div className='flex flex-col items-center bg-black scroller'>
+        <div className='flex flex-col items-center bg-black scroller min-h-screen'>
             <div className='text-4xl'>
                 <TypewriterEffectSmoothDemo />
             </div>
