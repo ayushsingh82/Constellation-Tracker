@@ -6,6 +6,7 @@ import {createBrowserRouter,RouterProvider,createRoutesFromElements} from 'react
 import { Route } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx'
+import Explore from './components/Explore.jsx'
 
 // import '@rainbow-me/rainbowkit/styles.css';
 
@@ -56,6 +57,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
     <Route path='/' element={<Home/>}/>
+    <Route path='/explore' element={<Explore/>}/>
     </Route>
   )
 )
