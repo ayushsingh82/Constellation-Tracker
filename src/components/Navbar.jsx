@@ -42,7 +42,7 @@ function Navbar() {
           )}
         </div>
       </div>
-      <hr className='border-t-2 border-purple-600' />
+      <hr className='border-t-4 border-purple-600' />
     </nav>
   );
 }

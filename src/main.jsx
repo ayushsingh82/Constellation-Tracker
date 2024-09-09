@@ -7,6 +7,9 @@ import { Route } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx'
 import Explore from './components/Explore.jsx'
+import NormalTransaction from './components/NormalTransaction.jsx'
+import InternalTransaction from './components/InternalTransaction.jsx'
+import Balance from './components/Balance.jsx'
 
 // import '@rainbow-me/rainbowkit/styles.css';
 
@@ -58,6 +61,9 @@ const router = createBrowserRouter(
     <Route>
     <Route path='/' element={<Home/>}/>
     <Route path='/explore' element={<Explore/>}/>
+    <Route path='/normal' element={<NormalTransaction/>}/>
+    <Route path='/internal' element={<InternalTransaction/>}/>
+    <Route path='/balance' element={<Balance/>}/>
     </Route>
   )
 )
