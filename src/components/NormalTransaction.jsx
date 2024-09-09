@@ -36,8 +36,8 @@ function Normal() {
   return (
     <div className='flex flex-col justify-center mt-[40px]'>
       <div>
-        <h2 className='text-slate-800 text-2xl font-medium b mx-auto w-[300px] border rounded-xl border-transparent
-          bg-gradient-to-r from-gray-100 to-gray-300
+        <h2 className='text-2xl  b mx-auto w-[300px] border rounded-xl border-transparent
+          bg-black text-purple-500 font-bold px-[10px]
           hover:scale-110 transition-all duration-500 ease-in-out'>
           Normal Transactions
         </h2>

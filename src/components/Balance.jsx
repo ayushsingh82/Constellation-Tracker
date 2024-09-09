@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Loader } from './Loader';
 import { RiBankCardFill } from "react-icons/ri";
+import Search from './Search';
 
 function Balance() {
   const [balance, setBalance] = useState(0);
@@ -38,6 +39,35 @@ function Balance() {
   }, []); // No need for dependency array as we're using a fixed address
 
   return (
+    <div>
+   
+    <div className=''>
+    <div>
+      <Search />
+    </div>
+    
+    <div className='flex space-x-4 mt-4 justify-center items-center mt-[100px] gap-x-12'>
+      <a 
+        href="/balance" 
+        className='bg-blue-500 text-white px-4 py-2 rounded text-xl font-semibold'
+      >
+        Balance
+      </a>
+      <a 
+        href="/internal" 
+        className='bg-black text-white px-4 py-2 rounded text-xl font-semibold'
+      >
+        Internal
+      </a>
+      <a 
+        href="/normal" 
+        className='bg-blue-500 text-white px-4 py-2 rounded text-xl font-semibold'
+      >
+        Normal
+      </a>
+    </div>
+  </div>
+
     <div className='flex justify-center mt-[40px] shadow-sm'>
       <div className='text-2xl text-white bg-blue-600 border rounded-xl border-transparent font-medium hover:scale-110 transition-all duration-500 ease-in-out py-[10px] px-[10px] flex'>
         <RiBankCardFill className='mr-[10px] mt-[7px]'/>
@@ -47,6 +77,7 @@ function Balance() {
           <p>Balance: {balance} ETH</p>
         )}
       </div>
+    </div>
     </div>
   );
 }
