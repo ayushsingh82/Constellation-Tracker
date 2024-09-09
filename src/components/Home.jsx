@@ -3,23 +3,78 @@ import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 // import { TracingBeam } from "./ui/tracing-beam";
 import { TypewriterEffectSmooth } from './ui/typewriter-effect';
+import { Spotlight } from "./ui/Spotlight";
+import { SparklesCore } from "./ui/sparkles";
 
 
+ const SparklesPreview=()=> {
+    return (
+      <div className="h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
 
+        <SpotlightPreview/>
+        <div className="w-[40rem] h-40 relative mt-[-152px]">
+          {/* Gradients */}
+          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+   
+          {/* Core component */}
+          <SparklesCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1}
+            particleDensity={1200}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+    
+
+          {/* Radial Gradient to prevent sharp edges */}
+          <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+        </div>
+        
+      </div>
+    );
+  }
+  
+
+const SpotlightPreview =()=> {
+    return (
+      <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+     
+      <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20"
+          fill="white"
+        />
+        <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
+          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          <TypewriterEffectSmoothDemo/>
+          </h1>
+          <button className='mt-[5px] ml-[200px] border-2 border-purple-500 text-white px-[10px] py-[10px] font-medium text-xl bg-gradient-to-r from-purple-900 via-black to-black rounded-lg mx-auto'>
+          Join the community
+      </button>
+      <button className='mt-[5px] ml-[30px] border-2 border-purple-500 text-white px-[10px] py-[10px] font-medium text-xl bg-gradient-to-r from-purple-900 via-black to-black rounded-lg mx-auto'>
+      <a href='/explore'>Explore</a>
+  </button>
+        </div>
+      </div>
+    );
+  }
 
 const TypewriterEffectSmoothDemo = () => {
     const words = [
         {
-            text: "Run",
+            text: "Track your",
         },
         {
-            text: "Nodes",
+            text: "portfolio",
         },
         {
             text: "with",
         },
         {
-            text: "Puffer.",
+            text: "Constellation-Tracker.",
             className: "text-purple-500 dark:text-purple-500",
         },
     ];
@@ -36,20 +91,9 @@ function Home() {
     return (
         <div className='flex flex-col items-center bg-black scroller min-h-screen'>
             <div className='text-4xl'>
-                <TypewriterEffectSmoothDemo />
+                <SparklesPreview/>
             </div>
-            <h3 className='mt-[20px] text-white text-xl'>
-                Create and manage ad campaigns effortlessly. Our user-friendly platform allows you
-                <br /> to design, launch, and monitor your ads seamlessly, ensuring maximum reach and
-                <br /> engagement with minimal hassle.
-            </h3>
-            <button className='mt-[20px] border-2 border-purple-500 text-white px-[10px] py-[10px] font-medium text-xl bg-gradient-to-r from-purple-900 via-black to-black rounded-lg mx-auto'>
-                Join the community
-            </button>
-            <div className='mt-[80px] flex flex-col gap-y-[80px] text-white mb-[30px]'>
-        
-                
-            </div>
+         
         </div>
     )
 }
@@ -58,27 +102,3 @@ export default Home
 
 
 
-// <div className='flex flex-col md:flex-row justify-between mx-auto md:gap-x-12 gap-y-12'>
-// <div>
-//     <motion.h1 className='text-center font-medium text-3xl text-purple-500'
-//         initial={{ y: 100, opacity: 0 }}
-//         animate={{ y: 0, opacity: 1 }}
-//         transition={{ duration: 2 }}>
-//         Earn from Viewer Engagement
-//     </motion.h1>
-//     <motion.p className='mt-[20px] text-lg'
-//         initial={{ x: -100, opacity: 0 }}
-//         animate={{ x: 0, opacity: 1 }}
-//         transition={{ duration: 4 }}>
-//         Generate revenue when viewers interact with your ads. Our system rewards you
-//         <br /> for each visit and click, turning viewer engagement into tangible
-//         <br /> earnings for your campaigns.
-//     </motion.p>
-// </div>
-// <motion.div className='h-[400px]'
-//     initial={{ x: 100, opacity: 0 }}
-//     animate={{ x: 0, opacity: 1 }}
-//     transition={{ duration: 3 }}>
-//     <img className='h-[400px] w-[400px]' src='https://i.pinimg.com/originals/12/66/07/126607145b0a3adf66144b7bd6b39635.jpg' alt='image' />
-// </motion.div>
-// </div>
